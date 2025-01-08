@@ -14,9 +14,9 @@
 
 1. **측정 부위 선택하기**
 
-해당 프로젝트는 대분류(팔, 팔꿈치, 척추, 무릎)와 해당 부위에 따른 소분류 운동으로 나누어져 있습니다. 따라서, 해당 가이드에 맞추어 SDK에 요청해야 정상적으로 앱이 열립니다.
+해당 프로젝트는 대분류(팔, 팔꿈치, 척추, 무릎)와 해당 부위에 따른 소분류 운동으로 나누어져 있습니다.
 
-1) 대분류 선택하기
+1) 대분류 호출하기
    - 대분류는 패키지의 MeasurePart enum 형태로 정의되어 있습니다.
       ```kotlin
             enum class MeasurePart(val exerciseName : String) {
@@ -58,7 +58,7 @@
 
 2) 소분류 선택하기
    * 대분류를 통해 자세 측정 목록 호출 매서드 예시
-     - 1)에서 호출한 대분류 값을 매개변수로 정적 자세 enum을 호출합니다.
+     - 1)에서 호출한 대분류 값을 매개변수로 enum을 호출합니다.
      ```kotlin
          fun selectDetailROM(rom : MeasurePart) : List<Measurable> {
              return when(rom) {
@@ -74,15 +74,7 @@
      ```
 
    * 정적 자세 촬영하기
-    - StaticMeasure enum 값을 통해 정적 자세 카메라를 호출할 수 있습니다. 
-    ```kotlin
-        enum class StaticMeasure(override val exerciseName : String) : StaticMeasurable, StaticWrapperTransformable {
-            FRONT("정면 촬영"),
-            LEFT("왼쪽 측면 촬영"),
-            RIGHT("오른쪽 측면 촬영");
-        }
-
-    ```
+   [android sdk library 설치 가이드](./guide/정적자세가이드.md)
 
 
 
