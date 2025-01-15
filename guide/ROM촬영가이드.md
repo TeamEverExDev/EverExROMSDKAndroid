@@ -5,10 +5,13 @@
      - 각 자세에 대한 세부 촬영 항목은 다음과 같습니다.
        * `ShoulderMeasure`
          ```kotlin
-            enum class StaticMeasure(override val exerciseName : String) {
-                FRONT("정면 촬영"),
-                LEFT("왼쪽 측면 촬영"),
-                RIGHT("오른쪽 측면 촬영");
+            enum class ShoulderMeasure(override val exerciseName: String) : ROMMeasurable, ROMWrapperTransformable {
+                LEFT_SIDE_LATERAL("왼팔 옆으로 벌리기"),
+                RIGHT_SIDE_LATERAL("오른팔 옆으로 벌리기"),
+                RIGHT_ARM_BENT("오른팔 앞으로 올리기"),
+                RIGHT_ARM_LOOSE("오른팔 뒤로 펴기"),
+                LEFT_ARM_BENT("왼팔 앞으로 올리기"),
+                LEFT_ARM_LOOSE("왼팔 뒤로 펴기");
             }
          ```
        * `ElbowMeasure`
