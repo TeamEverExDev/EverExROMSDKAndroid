@@ -5,7 +5,7 @@
      - 각 자세에 대한 세부 촬영 항목은 다음과 같습니다.
        * `ShoulderMeasure`
          ```kotlin
-            enum class ShoulderMeasure(override val exerciseName: String) : ROMMeasurable, ROMWrapperTransformable {
+            enum class ShoulderMeasure(override val exerciseName: String) {
                 LEFT_SIDE_LATERAL("왼팔 옆으로 벌리기"),
                 RIGHT_SIDE_LATERAL("오른팔 옆으로 벌리기"),
                 RIGHT_ARM_BENT("오른팔 앞으로 올리기"),
